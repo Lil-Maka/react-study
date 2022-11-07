@@ -1,0 +1,16 @@
+npx create-react-app "TuAPP"
+
+npm start -> empieza el servidor
+
+npm run build -> hace un bundle del proyecto 
+
+npm test -> testeos
+
+npm run eject -> Removes this tool and copies build dependencies, configuration files and scripts into the app directory. If you do this, you can’t go back!
+
+Errores comunes con fotos y estilos.
+	Para usar fotos muchas veces, necesitaremos importar la ruta del archivo que necesitemos y añadirlo como variable : import variable from 'path'
+	para luego usar src = {variable}
+
+	También hay otra manera de fixearlo y es usar los estilos y fotos en la carpeta public, en vez de src, pero no es recomendado, hay info en la página de react.
+
