@@ -18,7 +18,7 @@ import React from 'react';
 // }
 
 // deconstruct object
-function Contact({img, name, tlf, mail, isPerson}) {
+function Contact({img, name, tlf, mail, isPerson, hasCompostName}) {
 
     return (
         <div>
@@ -30,9 +30,14 @@ function Contact({img, name, tlf, mail, isPerson}) {
            <div>
                 <p className="mail">Mail: {mail}</p>
            </div>
-           <div style={{display: isPerson ? 'block' : 'none'}}>
+           {/* <div style={{display: isPerson ? 'block' : 'none'}}>
                 <h2>Es una persona!</h2>
+           </div> */}
+           <div>
+               <h2>{isPerson ? "" : "No "}Es una persona!</h2>
            </div>
+           {hasCompostName && <h2>Tiene nombre compuesto</h2>}
+           <hr/>
         </div>
     );
 }
