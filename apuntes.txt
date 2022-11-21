@@ -14,3 +14,27 @@ Errores comunes con fotos y estilos.
 
 	También hay otra manera de fixearlo y es usar los estilos y fotos en la carpeta public, en vez de src, pero no es recomendado, hay info en la página de react.
 
+
+props => métodos que nos llegan, podemos asignar props a un componente que hayamos creado como ->
+<Contact key="tal" dinamico={dynamic}>  y luego recuperar en el component function Contact(props)
+Donde props tiene props.key y props.dinamico
+
+
+state => nos permite cambiar una variable que ha sido actualizada
+test = React.useState("test", function(){})
+test[0] => "test"
+
+Destructuring => [test, setTest] = React.useState("test")    // Se le pone set siempre como 2do argumento 
+test => "test"
+
+setTest("test2124124") => cambia el test inicial 
+
+
+
+El state y el props nunca deberían de modificarse
+
+Al set se le puede pasar como parámetro un valor o una callback function que tiene como primer arg el oldValue,
+usaremos el valor string int etc. cuando no querramos hacer uso de oldValue, cuando querramos hacer uso de oldValue, 
+por ejemplo en un contador, es la mejor práctica.
+
+5:53:48

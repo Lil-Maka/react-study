@@ -1,0 +1,19 @@
+.trollface {
+    height: 10%;
+    width: 10%;
+}
+
+.parentDiv{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    height:65px;
+    color:white;
+    padding:20px;
+}
+
+.projectText{
+    font-size: 0.75rem;
+    margin-right: auto;
+}
