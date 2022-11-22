@@ -20,3 +20,7 @@ div {
     border-radius: 5px;
     border: 1px solid #D5D4D8;
 }
+
+.meme--image{
+    max-width: 100%;
+}
