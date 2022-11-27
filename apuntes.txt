@@ -37,4 +37,39 @@ Al set se le puede pasar como parámetro un valor o una callback function que ti
 usaremos el valor string int etc. cuando no querramos hacer uso de oldValue, cuando querramos hacer uso de oldValue, 
 por ejemplo en un contador, es la mejor práctica.
 
-5:53:48
+
+
+
+Al cambiar un state o una prop, nunca se debe cambiar su valor anterior ni  sobreescribirlo ni nada, es erróneo.
+
+
+Hay situaciones donde meter el state en un componente hijo, no es lo mejor, aunque actúe sobre este, una de ellas es cuando
+el state del componente también se actualiza en el padre, a esto se le llama derived state y, significará que tendremos 2 
+fuentes de la verdad.
+
+Por lo tanto tendremos que actualizar en el padre, para hacer esto, podemos pasarle una función al hijo desde el parent, 
+que simplemente ejecute dicha función cuando querramos y, devolviendo la info que querrámos a esa función, por ejemplo id.
+Por tanto en el parent se le pasa la función (y desde ahí actualizamos el state) y el hijo la ejecuta:
+hijo -> () => {return props.id}   parent -> (id) =>	{setState(prevState => id == prevState.id {return do})}
+
+
+
+Conditional rendering en el component return ({props.render && <p>rendered</p>})
+
+
+Forms, para usar formularios, inputs, textarea etc. Necesitamos crear un state para el "value" => input type=text value={state}
+Y una función que actualice dicho state "onChange"  input type=text onChange={handleChange}, donde dentro de la función
+handleChange, vamos a hacer un setState y actualizar de esta forma =>  handleChange(event){ setState(event.target.value)}
+
+Pasamos el event como argumento porque devuelve el elemento del DOM como objeto
+
+Si queremos en una handleChange controlar varios inputs, podemos pasar el state como objeto y, en cada input name, cambiar 
+únicamente la propiedad que le pertoca.
+
+
+htmlFor="referenceId", asocia un label a un input mediante su id="referenceId"
+
+
+
+en un form, función de SUBMIT
+event.preventDefault()  PARA NO REFRESCAR LA PÁGINA AL DARLE A ENVIAR EN UN FORM
