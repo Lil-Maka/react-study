@@ -73,3 +73,27 @@ htmlFor="referenceId", asocia un label a un input mediante su id="referenceId"
 
 en un form, función de SUBMIT
 event.preventDefault()  PARA NO REFRESCAR LA PÁGINA AL DARLE A ENVIAR EN UN FORM
+
+
+
+Side effect use effect hook
+
+En react si hacemos una llamada a una api por ejemplo, y guardamos su valor en un state, hará un bucle, 
+ya que cuando setea ese valor, al recargar el componente, vuelve a hacer la petición y, vuelve a añadir dicho valor
+y así en un bucle infinito.
+
+Por lo tanto si usamos el hook de useEffect, podemos evitar esto, tiene dos parámetros, una función callback y un array de variables
+que permitirán renderizar de nuevo ese effect cada vez que dichas variables cambien ej:
+(Si pasamos un array vacío, solo llamará una vez el useEffect, aunque vuelva a renderizar react por ejemplo clicando un botón que cambie el state)
+React.useEffect(() => {
+	fetch("api")
+		.then(res => res.json())
+		.then(data => setDataInfo(data))
+	
+	return cleanFunction => (do)
+}, [])
+
+Si ponemos dataInfo como argumento, hará el loop infinito.
+Se le puede devolver a esa función callback, como valor de return, una función que limpie ese effect cada vez que el componente que use ese effect
+desaparezca, un unmount.
+
